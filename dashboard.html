@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FidApp</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/041af7971e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCM_8wZhPXhHKpbhJfj5jzrLIsIW41UKRg",
+        authDomain: "fidapp-3cd6f.firebaseapp.com",
+        databaseURL: "https://fidapp-3cd6f.firebaseio.com",
+        projectId: "fidapp-3cd6f",
+        storageBucket: "fidapp-3cd6f.appspot.com",
+        messagingSenderId: "892765148176",
+        appId: "1:892765148176:web:943bec29c8aadca99ce695",
+        measurementId: "G-MKZ7B20V6M",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="side-header">
+        <section class="top-side">
+          <div class="widgets">
+            <div class="widgets__notification">
+              <div class="widgets__icon">
+                <i class="fas fa-bell"></i>
+                <span class="widgets__qty">1</span>
+              </div>
+            </div>
+            <div class="notifications">
+              <ul class="notifications__wrapper">
+                <li>
+                  <h5>Actualización...</h5>
+                  <p>
+                    15 de Agosto, presentaremos novedad en servidores por
+                    actualizaciones...
+                  </p>
+                  <!-- <a href="#" class="delete"
+                    ><i class="fas fa-times-circle"></i
+                  ></a> -->
+                </li>
+                <li>
+                  <h5>Actualización...</h5>
+                  <p>
+                    15 de Agosto, presentaremos novedad en servidores por
+                    actualizaciones...
+                  </p>
+                  <!-- <a href="#" class="delete"
+                    ><i class="fas fa-times-circle"></i
+                  ></a> -->
+                </li>
+              </ul>
+            </div>
+
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="user">
+            <!-- large: "https://randomuser.me/api/portraits/men/27.jpg"
+                medium: "https://randomuser.me/api/portraits/med/men/27.jpg"
+                thumbnail: "https://randomuser.me/api/portraits/thumb/men/27.jpg" -->
+            <img
+              src="https://randomuser.me/api/portraits/men/27.jpg"
+              alt="Josh Howard"
+              class="user__image"
+            />
+            <h4 class="user__name">
+              Josh Howard
+            </h4>
+          </div>
+          <nav class="nav">
+            <ul class="nav__menu">
+              <li class="active">
+                <a href="#"><i class="fas fa-compact-disc"></i> Overview</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-compass"></i> Insights</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-exchange-alt"></i> Transactions</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-heart"></i> Services</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-window-restore"></i> Accounts</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </aside>
+      <section class="content">
+        <div class="content__top"></div>
+        <div class="wrapper">
+          <div class="card text">
+            <div class="card__form">
+              <form id="form" class="form">
+                <div class="form__group radio">
+                  <input
+                    type="radio"
+                    name="type"
+                    id="inc"
+                    value="inc"
+                    class="form__radio"
+                    checked
+                  />
+                  <label for="inc" class="form__label">Ingreso</label>
+                  <input
+                    type="radio"
+                    id="exp"
+                    value="exp"
+                    name="type"
+                    class="form__radio"
+                  />
+                  <label for="exp" class="form__label">Gasto</label>
+                </div>
+                <div class="form__group input">
+                  <input
+                    id="valor"
+                    type="text"
+                    name="valor"
+                    class="form__input"
+                    required
+                  />
+                  <label for="valor" class="form__label">Valor</label>
+                </div>
+                <div class="form__group">
+                  <select
+                    name="categoria"
+                    id="categoria"
+                    class="form__select"
+                    required
+                  >
+                    <option value="" selected disabled></option>
+                    <option value="salario">Salario</option>
+                    <option value="casa">Casa</option>
+                  </select>
+                  <i></i>
+                  <label for="categoria" class="form__label">Categoria</label>
+                </div>
+                <div class="form__group input">
+                  <input
+                    id="descripcion"
+                    type="text"
+                    name="descripcion"
+                    class="form__input"
+                    required
+                  />
+                  <label for="descripcion" class="form__label"
+                    >Descripcion</label
+                  >
+                </div>
+                <button class="button button__submit">Guardar</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="card text">
+            <div class="card__savings">
+              <p>
+                <span class="card__savings--text">I want to save</span>
+                <span class="card__savings--value">$5</span>
+                <span class="card__savings--time">Every Monday</span>
+                for a
+                <span class="card__savings--desc">Nest Egg</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card photo">
+            <div class="card__image">
+              <img src="https://source.unsplash.com/random/1" alt="Prueba" />
+            </div>
+            <div class="card__savings">
+              <p>
+                <span class="card__savings--text">I want to save</span>
+                <span class="card__savings--value">$5</span>
+                <span class="card__savings--time">Every Monday</span>
+                for a
+                <span class="card__savings--desc">Nest Egg</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card text">
+            <div class="card__content">
+              <div class="card__item">
+                <span class="icon"><i class="fas fa-money-bill-wave"></i></span>
+                <div class="budget">
+                  <span class="title">Cash</span>
+                  <span class="value">$459</span>
+                </div>
+              </div>
+              <div class="card__item">
+                <span class="icon"><i class="fas fa-credit-card"></i></span>
+                <div class="budget">
+                  <span class="title">Credit Card</span>
+                  <span class="value">$2,659</span>
+                </div>
+              </div>
+              <div class="card__item">
+                <span class="icon"><i class="fas fa-chart-area"></i></span>
+                <div class="budget">
+                  <span class="title">Investment</span>
+                  <span class="value">$585</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card photo">
+            <div class="card__image">
+              <img src="https://source.unsplash.com/random/1s" alt="Prueba" />
+            </div>
+            <div class="card__savings">
+              <p>
+                <span class="card__savings--text">I want to save</span>
+                <span class="card__savings--value">$5</span>
+                <span class="card__savings--time">Every Monday</span>
+                for a
+                <span class="card__savings--desc">Nest Egg</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Main javascript runtimes -->
+    <script src="index.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

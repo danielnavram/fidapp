@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FidApp - Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/041af7971e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCM_8wZhPXhHKpbhJfj5jzrLIsIW41UKRg",
+        authDomain: "fidapp-3cd6f.firebaseapp.com",
+        databaseURL: "https://fidapp-3cd6f.firebaseio.com",
+        projectId: "fidapp-3cd6f",
+        storageBucket: "fidapp-3cd6f.appspot.com",
+        messagingSenderId: "892765148176",
+        appId: "1:892765148176:web:943bec29c8aadca99ce695",
+        measurementId: "G-MKZ7B20V6M",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  <body>
+    <nav class="nav">
+      <span class="nav__close" id="nav__close"
+        ><i class="fas fa-times"></i
+      ></span>
+      <div class="nav__content">
+        <h2>FidApp</h2>
+        <ul class="menu"></ul>
+      </div>
+    </nav>
+    <header class="header">
+      <div class="logo">
+        <div class="hmb">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h3 class="logo__title"><a href="#" class="logo__link">FidApp</a></h3>
+      </div>
+      <!-- Botones van aqui -->
+      <div class="botones"></div>
+    </header>
+
+    <!-- Inicio del Wrapper Class-->
+    <div class="wrapper"></div>
+    <!-- Final Wrapper Class -->
+
+    <!-- Main javascript runtimes -->
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
