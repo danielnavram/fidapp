@@ -350,5 +350,3 @@ const MainController = ((Auth, UI) => {
     },
   };
 })(AuthModel, UIController);
-
-MainController.init();
